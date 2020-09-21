@@ -24,7 +24,13 @@ Response should be 201:
   "id": 1,
   "author": "Daniel",
   "message": "Message text",
-  "replies": 0
+   "replies": [
+          {
+              "id": 101,
+              "authro": "Reply - Author - Ripal Patel",
+              "message": "Reply - Message - patel.ripalk@gmail.com"
+          }
+        ]
 }
 ```
 
@@ -39,7 +45,6 @@ with body:
 Response should be 201:
 ```json
 {
-  "questionId": 1,
   "id": 5,
   "author": "Reply author",
   "message": "Message reply text"
@@ -47,7 +52,7 @@ Response should be 201:
 ```
 
 ### Get a thread: `http://localhost:5000/questions/{questionId}`, 
-the response should look like:
+the response should be: 200
 ```json
 {
   "id": 1,
@@ -58,8 +63,7 @@ the response should look like:
        "id": 5,
        "author": "Reply author",
        "message": "Message reply text"
-    },
-    ...
+    }
   ]
 }
 ```
@@ -72,9 +76,20 @@ The response should look like:
       "id": 1,
       "author": "Daniel",
       "message": "Message text",     
-      "replies": 0
+      "replies": [
+                  {
+                      "id": 103,
+                      "authro": "Reply - Author - Nancy Ref",
+                      "message": "Reply - Message - nancy.ref@gmail.com"
+                  }
+              ]
     },
-    ...
+    {
+            "id": 10002,
+            "authro": "Author - Bhavin Patel",
+            "message": "Message - bhavinpatel1451@gmail.com",
+            "replies": []
+        }]
 ]
 ```
 
